@@ -1,0 +1,15 @@
+{
+    "name": "vue-animated-number",
+    "version": "0.1.0",
+    "description": "Animated numbers for VueJS.",
+    "main": "src/AnimatedNumber.vue",
+    "peerDependencies": {
+        "vue": ">=2"
+    },
+    "repository": {
+        "url": "https://github.com/aislasq/vue-animated-number.git",
+        "type": "git"
+    },
+    "author": "Andres Islas <aislasq@gmail.com>",
+    "license": "MIT"
+}

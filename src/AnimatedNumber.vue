@@ -48,12 +48,12 @@
                         if(this.multiplier >= Math.E) {
                             this.display = this.goal;
                             clearInterval( this.interval );
-                            this.$emit('on-finish', display);
+                            this.$emit('on-finish', this.display);
                             return;
                         }
                         let newVal = (this.goal * Math.log( this.multiplier ));
                         this.display = Math.round(newVal);
-                        this.$emit('on-update', display);
+                        this.$emit('on-update', this.display);
                     }.bind(this), 20);
             }
         }

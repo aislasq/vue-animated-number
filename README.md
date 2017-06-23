@@ -14,7 +14,7 @@ $ npm install https://github.com/aislasq/vue-animated-number.git
 * **goal:** The number to which the animation will reach. Required.
 * **outOff:** The max number it could achieve ( number / outOff ). Not required.
 * **mainClass:** The classes for the \<p> holding the number. Not required.
-* **seconds:** The amount of seconds the animation will run. Default 2 seconds.
+* **seconds:** The amount of seconds the animation will run. Default 1 seconds.
 
 #### Methods: 
 

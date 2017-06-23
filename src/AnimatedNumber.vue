@@ -1,13 +1,13 @@
 <template>
     <p :class='mainClass'>
-        {{displayNumber}} {{ outOff >= 0 ? ' / ' + outOff : '' }}
+        {{display}} {{ outOff >= 0 ? ' / ' + outOff : '' }}
     </p>
 </template>
 
 <script>
     export default {
         props: {
-            number: {
+            goal: {
                 default: 0,
                 required: true
             },
@@ -26,7 +26,7 @@
         },
         data: function(){
             return {
-                displayNumber: 0,
+                display: 0,
                 interval: -1,
                 multiplier: 1
             }
@@ -41,19 +41,19 @@
         },
         methods:{
             animate: function(){
-                if(this.multiplier >= Math.E || this.number === this.displayNumber) return;
+                if(this.multiplier >= Math.E || this.goal === this.display) return;
                 this.interval = window.setInterval(
                     function(){
                         this.multiplier += this.delta;
                         if(this.multiplier >= Math.E) {
-                            this.displayNumber = this.number;
+                            this.display = this.goal;
                             clearInterval( this.interval );
-                            this.$emit('on-finish', displayNumber);
+                            this.$emit('on-finish', display);
                             return;
                         }
-                        let newVal = (this.number * Math.log( this.multiplier ));
-                        this.displayNumber = Math.round(newVal);
-                        this.$emit('on-update', displayNumber);
+                        let newVal = (this.goal * Math.log( this.multiplier ));
+                        this.display = Math.round(newVal);
+                        this.$emit('on-update', display);
                     }.bind(this), 20);
             }
         }
